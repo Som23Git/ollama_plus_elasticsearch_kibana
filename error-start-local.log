@@ -1,0 +1,9 @@
+Error: docker compose up --wait command failed!
+Start-local version: 0.9.0
+Docker engine: Docker version 28.1.1, build 4eba377
+Docker compose: 2.35.1
+Distribution: macOS
+Version: 15.5
+-- Logs of service es-local-dev:
+-- Logs of service kibana-local-dev:
+-- Logs of service kibana_settings:
