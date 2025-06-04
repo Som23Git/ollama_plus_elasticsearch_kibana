@@ -6,7 +6,7 @@ This repository connects [Ollama](https://ollama.com) with [Elasticsearch + Kiba
 
 ## 🚀 Quick Start
 
-```
+```bash
 # 1. Clone this repository
 git clone https://github.com/Som23Git/ollama_plus_elasticsearch_kibana.git
 cd ollama_plus_elasticsearch_kibana
