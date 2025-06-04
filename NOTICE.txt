@@ -1,0 +1,12 @@
+This project includes public domain content sourced from Project Gutenberg:
+
+Title: Alice’s Adventures in Wonderland  
+Author: Lewis Carroll  
+Source: https://www.gutenberg.org/ebooks/11  
+License: Public Domain in the United States
+
+You are free to copy, modify, and redistribute the text.
+
+As per Project Gutenberg’s trademark policy, this project removes any branding and does not use the “Project Gutenberg” name in a commercial context.
+
+For full license terms, see https://www.gutenberg.org/license
