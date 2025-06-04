@@ -6,20 +6,25 @@ This repository connects [Ollama](https://ollama.com) with [Elasticsearch + Kiba
 
 ## 🚀 Quick Start
 
-```bash
-# Start Ollama with model selection (e.g., mistral or deepseek)
+```
+# 1. Clone this repository
+git clone https://github.com/Som23Git/ollama_plus_elasticsearch_kibana.git
+cd ollama_plus_elasticsearch_kibana
+
+# 2. Start Ollama with model selection (e.g., mistral or deepseek)
 ./start-ollama.sh
 
-# Install and start Elasticsearch + Kibana (first time only)
+# 3. Install and start Elasticsearch + Kibana (first time only)
 curl -fsSL https://elastic.co/start-local | sh -s -- -v 8.18.2
 
-# If already installed, start the services
+# 4. If already installed, start the services
 cd elastic-start-local
-./start.sh 
+./start.sh
 
-# Optional: Check network connectivity from host or containers
+# 5. (Optional) Check network connectivity from host or containers
 ./network-check.sh
-````
+
+```
 
 ---
 
