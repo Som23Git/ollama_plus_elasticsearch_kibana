@@ -1,39 +1,69 @@
-# Ollama + Elasticsearch RAG Starter
+# 🧠 Ollama + Elasticsearch RAG Starter
 
-This repo connects [Ollama](https://ollama.com) with [Elasticsearch + Kibana](https://elastic.co) to support OpenAI-compatible RAG experiments locally.
+This repository connects [Ollama](https://ollama.com) with [Elasticsearch + Kibana](https://elastic.co) to support **OpenAI-compatible RAG (Retrieval-Augmented Generation)** experiments locally. It uses a shared Docker network to enable seamless integration between the LLM runtime and the Elastic Stack.
 
-## 🚀 How to Run
+---
+
+## 🚀 Quick Start
 
 ```bash
-# Start Ollama
+# Start Ollama with model selection (e.g., mistral or deepseek)
 ./start-ollama.sh
 
-# Start Elasticsearch & Kibana
-
+# Install and start Elasticsearch + Kibana (first time only)
 curl -fsSL https://elastic.co/start-local | sh -s -- -v 8.18.2
 
-# If already created,
-
+# If already installed, start the services
 cd elastic-start-local
 ./start.sh 
 
-# Check network(Optional)
+# Optional: Check network connectivity from host or containers
+./network-check.sh
+````
 
-./network_check.sh
+---
 
-# Expected Output:
+### ✅ Expected Output
 
+```text
 🌐 Checking connectivity to http://localhost:11434/v1/chat/completions
 ⏳ Sending test prompt to mistral...
 ✅ Ollama responded successfully!
 🧠 Model response:
-" A vector database is a type of database designed specifically for storing, indexing, and querying large collections of data vectors, which are mathematical entities with both magnitude and direction. In simpler terms, they can be seen as an array or list of numbers. Vector databases gained prominence in the field of machine learning, artificial intelligence, and data analysis due to their ability to efficiently process high-dimensional vector data (large number of dimensions), often used for tasks like image recognition, recommend systems, or natural language processing.\n\n   Different from traditional relational databases that primarily focus on structuring data with a well-defined schema, these NoSQL databases offer more flexible storage options, allowing them to incorporate complex data types and handle unstructured or semi-structured data without the need for extensive preprocessing. Some popular examples of vector database systems are Faiss, Milvus, Pinecone, and Elasticsearch (with its VectorSphere extension).\n\n   One common operation within a vector database is performing similarity search, as vectors can be compared to each other using various distance measures like Euclidean distance or Cosine similarity. These databases employ sophisticated indexing techniques like hash tables, k-d trees, and Annoy (Approximate Nearest Neighbors Optimized Yahoo) to quickly fetch the closest vectors in a large dataset given a new query vector, enabling rapid processing of vector data at scale.\n\n   Vector databases prove beneficial for real-world applications like image search engines (e.g., Google Images), personalized recommendations (e.g., Amazon product suggestions or Netflix movie recommendations), and natural language processing tools (e.g., speech recognition). As a result, they have become crucial components in today's data-driven and AI-powered solutions."
-
+"A vector database is a type of database designed specifically for storing, indexing, and querying large collections of data vectors..."
 ```
 
-## Docker Container Setup
+---
+
+## 🐳 Docker Container Setup
+
+This setup ensures all containers (Ollama, Elasticsearch, Kibana) run in a **shared Docker network** named `rag-network`.
 
 ![Docker Container Setup](./assets/docker_container_setup.png)
 
-Inspired from here: https://www.elastic.co/search-labs/blog/deepseek-rag-ollama-playground.
+Inspired by:
+🔗 [Testing DeepSeek R1 locally for RAG with Ollama and Kibana – Elasticsearch Labs](https://www.elastic.co/search-labs/blog/deepseek-rag-ollama-playground)
 
+---
+
+## 📝 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
+## 📚 Public Domain Data Attribution
+
+This repository uses public domain content for RAG demos:
+
+* **Title**: *Alice’s Adventures in Wonderland*
+* **Blob**: [*Check here*](https://www.gutenberg.org/cache/epub/11/pg11.txt)
+* **Author**: Lewis Carroll
+* **Source**: [Project Gutenberg](https://www.gutenberg.org/ebooks/11)
+* **License**: Public Domain (U.S.)
+
+> As per [Project Gutenberg™ License](https://www.gutenberg.org/license), this work is freely usable in the U.S. The text file was stripped of all Gutenberg branding for compliance.
+
+You are free to copy, modify, and use the text for any purpose.
+
+---
