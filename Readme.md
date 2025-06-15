@@ -12,6 +12,7 @@ git clone https://github.com/Som23Git/ollama_plus_elasticsearch_kibana.git
 cd ollama_plus_elasticsearch_kibana
 
 # 2. Start Ollama with model selection (e.g., mistral or deepseek)
+chmod +x start-ollama.sh
 ./start-ollama.sh
 
 # 3. Install and start Elasticsearch + Kibana (first time only)
@@ -19,11 +20,18 @@ curl -fsSL https://elastic.co/start-local | sh -s -- -v 8.18.2
 
 # 4. If already installed, start the services
 cd elastic-start-local
+chmod +x start.sh
 ./start.sh
 
-# 5. (Optional) Check network connectivity from host or containers
+# 5. Check network connectivity from host or containers
+chmod +x network-check.sh
 ./network-check.sh
 
+# 6. Once Elasticsearch, Kibana is online, start the ingestion
+chmod +x ingest_alice_book.sh
+./ingest_alice_book.sh
+
+# 7. Jump to the Kibana Playground and add Connectors to ask questions.
 ```
 
 ---
